@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<title>Roletinha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="bg-blob bg-blob--1" aria-hidden="true"></div>
+<div class="bg-blob bg-blob--2" aria-hidden="true"></div>
+
+<div class="app" id="app">
+
+  <!-- áudio (opcional — ver assets/LEIA-ME.txt) -->
+  <audio id="audio-spin" src="assets/musica-sorteio.mp3" preload="auto"></audio>
+  <audio id="audio-egg" src="assets/musica-especial.mp3" preload="auto"></audio>
+
+  <!-- ===================== TELA INICIAL ===================== -->
+  <section class="screen" id="screen-home" data-screen>
+
+    <div class="home-top">
+      <div class="brand">
+        <span class="sparkle sparkle--1" aria-hidden="true">✦</span>
+        <h1 class="brand-name">roletinha</h1>
+        <span class="sparkle sparkle--2" aria-hidden="true">✦</span>
+      </div>
+      <p class="greeting" id="greeting-text">bom dia, meu amor</p>
+    </div>
+
+    <div class="mood-card">
+      <p class="mood-label">como vai ser o seu dia?</p>
+      <div class="mood-options" id="mood-options" role="radiogroup" aria-label="Clima do dia">
+        <button type="button" class="mood-chip is-active" data-mood="aleatorio">
+          <span class="mood-emoji">🎲</span> aleatório
+        </button>
+        <button type="button" class="mood-chip" data-mood="date">
+          <span class="mood-emoji">💌</span> date
+        </button>
+        <button type="button" class="mood-chip" data-mood="trabalho">
+          <span class="mood-emoji">💼</span> trabalho
+        </button>
+        <button type="button" class="mood-chip" data-mood="casa">
+          <span class="mood-emoji">🏡</span> em casa
+        </button>
+      </div>
+    </div>
+
+    <p class="home-question">o que vamos usar hoje?</p>
+
+    <div class="home-actions">
+      <button type="button" class="action-tile action-tile--makeup" data-open="maquiagem">
+        <span class="action-icon" aria-hidden="true">💄</span>
+        <span class="action-text">
+          <strong>maquiagem</strong>
+          <small>sortear um item</small>
+        </span>
+        <span class="action-arrow" aria-hidden="true">›</span>
+      </button>
+
+      <button type="button" class="action-tile action-tile--splash" data-open="splash">
+        <span class="action-icon" aria-hidden="true">🌸</span>
+        <span class="action-text">
+          <strong>body splash</strong>
+          <small>sortear um item</small>
+        </span>
+        <span class="action-arrow" aria-hidden="true">›</span>
+      </button>
+
+      <button type="button" class="action-tile action-tile--combo" data-open="combo">
+        <span class="action-icon" aria-hidden="true">✦</span>
+        <span class="action-text">
+          <strong>combo do dia</strong>
+          <small>maquiagem + body splash</small>
+        </span>
+        <span class="action-arrow" aria-hidden="true">›</span>
+      </button>
+    </div>
+
+  </section>
+
+  <!-- ===================== TELA DE SORTEIO (maquiagem / splash) ===================== -->
+  <section class="screen" id="screen-roulette" data-screen hidden>
+
+    <div class="screen-header">
+      <button type="button" class="icon-btn" data-back aria-label="Voltar">←</button>
+      <p class="screen-title" id="roulette-title">maquiagem</p>
+      <span class="mood-pill" id="roulette-mood-pill">aleatório</span>
+    </div>
+
+    <div class="stage">
+
+      <div class="wheel-wrap" id="wheel-wrap">
+        <span class="pointer" aria-hidden="true"></span>
+        <div class="wheel" id="wheel">
+          <div class="wheel-hub"><span id="wheel-hub-icon">💄</span></div>
+        </div>
+      </div>
+
+      <div class="result" id="result" hidden>
+        <p class="result-kicker" id="result-kicker">hoje você vai usar</p>
+        <h2 class="result-name" id="result-name">—</h2>
+
+        <div class="result-detail" id="result-detail">
+          <p class="detail-line" id="detail-funcao"></p>
+          <p class="detail-line" id="detail-combina"></p>
+        </div>
+
+        <p class="result-message" id="result-message"></p>
+      </div>
+
+      <div class="egg" id="egg" hidden>
+        <p class="egg-emoji" aria-hidden="true">✦ ✿ ✦</p>
+        <p class="egg-title">um extra especial pra você</p>
+        <p class="egg-text" id="egg-text"></p>
+      </div>
+    </div>
+
+    <div class="stage-actions">
+      <button type="button" class="btn btn-primary" id="spin-btn">girar</button>
+      <button type="button" class="btn btn-ghost" id="spin-again-btn" hidden>girar novamente</button>
+    </div>
+
+  </section>
+
+  <!-- ===================== TELA COMBO ===================== -->
+  <section class="screen" id="screen-combo" data-screen hidden>
+
+    <div class="screen-header">
+      <button type="button" class="icon-btn" data-back aria-label="Voltar">←</button>
+      <p class="screen-title">combo do dia</p>
+      <span class="mood-pill" id="combo-mood-pill">aleatório</span>
+    </div>
+
+    <div class="stage">
+
+      <div class="combo-wheels">
+        <div class="wheel-wrap wheel-wrap--mini" id="combo-wheel-wrap-1">
+          <span class="pointer pointer--mini" aria-hidden="true"></span>
+          <div class="wheel wheel--mini" id="combo-wheel-1">
+            <div class="wheel-hub wheel-hub--mini"><span>💄</span></div>
+          </div>
+          <p class="wheel-caption">maquiagem</p>
+        </div>
+        <div class="wheel-wrap wheel-wrap--mini" id="combo-wheel-wrap-2">
+          <span class="pointer pointer--mini" aria-hidden="true"></span>
+          <div class="wheel wheel--mini" id="combo-wheel-2">
+            <div class="wheel-hub wheel-hub--mini"><span>🌸</span></div>
+          </div>
+          <p class="wheel-caption">body splash</p>
+        </div>
+      </div>
+
+      <div class="combo-result" id="combo-result" hidden>
+        <div class="combo-card">
+          <span class="combo-tag">maquiagem</span>
+          <h3 class="combo-name" id="combo-makeup-name">—</h3>
+          <p class="combo-line" id="combo-makeup-detail"></p>
+        </div>
+        <div class="combo-card">
+          <span class="combo-tag">body splash</span>
+          <h3 class="combo-name" id="combo-splash-name">—</h3>
+          <p class="combo-line" id="combo-splash-detail"></p>
+        </div>
+        <p class="result-message" id="combo-message"></p>
+      </div>
+
+      <div class="egg" id="combo-egg" hidden>
+        <p class="egg-emoji" aria-hidden="true">✦ ✿ ✦</p>
+        <p class="egg-title">um extra especial pra você</p>
+        <p class="egg-text" id="combo-egg-text"></p>
+      </div>
+    </div>
+
+    <div class="stage-actions">
+      <button type="button" class="btn btn-primary" id="combo-spin-btn">girar</button>
+      <button type="button" class="btn btn-ghost" id="combo-spin-again-btn" hidden>girar novamente</button>
+    </div>
+
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
