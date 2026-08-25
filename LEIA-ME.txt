@@ -1,8 +1,0 @@
-Coloque aqui os arquivos de música/som que você escolher:
-
-- musica-sorteio.mp3  -> toca enquanto a roleta está girando
-- musica-especial.mp3 -> toca quando cai o easter egg (1 em cada 7 giros)
-
-Basta arrastar os arquivos com esses nomes para dentro desta pasta "assets".
-O app já está preparado para tocar automaticamente assim que os arquivos existirem.
-Se os arquivos não existirem ainda, o app funciona normalmente, só sem som.
