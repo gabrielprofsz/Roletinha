@@ -1,8 +1,33 @@
-Coloque aqui os arquivos de música/som que você escolher:
+Coloque aqui imagens (.png, de preferência quadradas, fundo transparente
+se possível) pra personalizar os ícones do app, substituindo os emojis.
 
-- musica-sorteio.mp3  -> toca enquanto a roleta está girando
-- musica-especial.mp3 -> toca quando cai o easter egg (1 em cada 7 giros)
+Nomes exatos que o app procura (minúsculo, sem espaço):
 
-Basta arrastar os arquivos com esses nomes para dentro desta pasta "assets".
-O app já está preparado para tocar automaticamente assim que os arquivos existirem.
-Se os arquivos não existirem ainda, o app funciona normalmente, só sem som.
+  mao.png              -> card "mão" na tela inicial
+  rosto.png            -> card "rosto" na tela inicial
+  splash.png           -> card "body splash" e roleta de body splash
+  combo.png            -> card "combo do dia"
+  boca.png             -> roleta e resultado de Boca
+  olhos.png            -> roleta e resultado de Olhos
+  esmalte.png          -> roleta e resultado de Esmalte (e do Esmalte Efeito no combo)
+  esmalte_efeito.png   -> roleta e resultado de Esmalte Efeito
+  blush.png            -> roleta e resultado de Blush
+  anel.png             -> roleta e resultado de Anel
+  base.png             -> roleta e resultado de Base/Corretivo
+  cilios.png           -> roleta e resultado de Máscara de Cílios
+
+Como funciona:
+- Assim que você colocar um arquivo com o nome certo aqui dentro, o app
+  troca o emoji por ele automaticamente — não precisa mexer em nenhum
+  código.
+- Se o arquivo não existir, o emoji continua aparecendo normalmente,
+  sem gerar nenhum erro.
+- Uma imagem quadrada de uns 200x200px já fica ótima, o app recorta
+  em círculo sozinho.
+
+IMPORTANTE — sobre fotos dos produtos:
+Isso aqui personaliza o ícone de cada CATEGORIA (mão, rosto, boca,
+esmalte, etc), não de cada produto individual. Colocar uma foto para
+cada um dos 310 produtos é uma etapa bem maior (cadastro com upload de
+fotos), que já está no planejamento futuro do app. Se quiser, podemos
+começar isso aos poucos por outra roleta.
