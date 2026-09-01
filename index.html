@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<title>Roletinha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="bg-blob bg-blob--1" aria-hidden="true"></div>
+<div class="bg-blob bg-blob--2" aria-hidden="true"></div>
+
+<div class="app" id="app">
+
+  <!-- áudio (opcional — ver assets/LEIA-ME.txt) -->
+  <audio id="audio-bg" preload="auto"></audio>
+  <audio id="audio-egg" src="assets/musica-especial.mp3" preload="auto"></audio>
+
+  <!-- player fixo no topo, pra pausar ou pular a música de fundo sem sair da tela -->
+  <div class="player-bar" id="player-bar">
+    <span class="player-icon" aria-hidden="true">🎵</span>
+    <span class="player-label">música de fundo</span>
+    <div class="player-controls">
+      <button type="button" class="player-btn" id="player-toggle" aria-label="Tocar música">▶</button>
+      <button type="button" class="player-btn" id="player-next" aria-label="Próxima música">⏭</button>
+    </div>
+  </div>
+
+  <!-- ===================== TELA INICIAL ===================== -->
+  <section class="screen" id="screen-home" data-screen>
+
+    <div class="home-top">
+      <div class="brand">
+        <span class="sparkle sparkle--1" aria-hidden="true">✦</span>
+        <h1 class="brand-name">roletinha</h1>
+        <span class="sparkle sparkle--2" aria-hidden="true">✦</span>
+      </div>
+      <p class="greeting" id="greeting-text">bom dia, meu amor</p>
+    </div>
+
+    <div class="mood-card">
+      <p class="mood-label">como vai ser o seu dia?</p>
+      <div class="mood-options" id="mood-options" role="radiogroup" aria-label="Clima do dia">
+        <button type="button" class="mood-chip is-active" data-mood="aleatorio">
+          <span class="mood-emoji">🎲</span> aleatório
+        </button>
+        <button type="button" class="mood-chip" data-mood="date">
+          <span class="mood-emoji">💌</span> date
+        </button>
+        <button type="button" class="mood-chip" data-mood="trabalho">
+          <span class="mood-emoji">💼</span> trabalho
+        </button>
+        <button type="button" class="mood-chip" data-mood="casa">
+          <span class="mood-emoji">🏡</span> em casa
+        </button>
+      </div>
+    </div>
+
+    <p class="home-question">o que vamos usar hoje?</p>
+
+    <div class="home-actions">
+      <button type="button" class="action-tile action-tile--maos" data-open-group="mao">
+        <span class="action-icon" aria-hidden="true">
+          <img src="assets/icons/mao.png" alt="" onerror="this.style.display='none'">
+          <span class="icon-fallback">🖐️</span>
+        </span>
+        <span class="action-text">
+          <strong>mão</strong>
+          <small>anel · esmalte · esmalte efeito</small>
+        </span>
+        <span class="action-arrow" aria-hidden="true">›</span>
+      </button>
+
+      <button type="button" class="action-tile action-tile--rosto" data-open-group="rosto">
+        <span class="action-icon" aria-hidden="true">
+          <img src="assets/icons/rosto.png" alt="" onerror="this.style.display='none'">
+          <span class="icon-fallback">😊</span>
+        </span>
+        <span class="action-text">
+          <strong>rosto</strong>
+          <small>boca · olhos · blush · base · cílios</small>
+        </span>
+        <span class="action-arrow" aria-hidden="true">›</span>
+      </button>
+
+      <button type="button" class="action-tile action-tile--splash" data-open-roleta="splash">
+        <span class="action-icon" aria-hidden="true">
+          <img src="assets/icons/splash.png" alt="" onerror="this.style.display='none'">
+          <span class="icon-fallback">🌸</span>
+        </span>
+        <span class="action-text">
+          <strong>body splash</strong>
+          <small>sortear um perfume</small>
+        </span>
+        <span class="action-arrow" aria-hidden="true">›</span>
+      </button>
+
+      <button type="button" class="action-tile action-tile--combo" data-open="combo">
+        <span class="action-icon" aria-hidden="true">
+          <img src="assets/icons/combo.png" alt="" onerror="this.style.display='none'">
+          <span class="icon-fallback">✦</span>
+        </span>
+        <span class="action-text">
+          <strong>combo do dia</strong>
+          <small>todas as categorias juntas</small>
+        </span>
+        <span class="action-arrow" aria-hidden="true">›</span>
+      </button>
+    </div>
+
+  </section>
+
+  <!-- ===================== SUBMENU: MÃO ===================== -->
+  <section class="screen" id="screen-submenu-mao" data-screen hidden>
+    <div class="screen-header">
+      <button type="button" class="icon-btn" data-back-home aria-label="Voltar">←</button>
+      <p class="screen-title">🖐️ mão</p>
+      <span></span>
+    </div>
+    <p class="home-question">qual roleta?</p>
+    <div class="home-actions" id="submenu-mao-list"></div>
+  </section>
+
+  <!-- ===================== SUBMENU: ROSTO ===================== -->
+  <section class="screen" id="screen-submenu-rosto" data-screen hidden>
+    <div class="screen-header">
+      <button type="button" class="icon-btn" data-back-home aria-label="Voltar">←</button>
+      <p class="screen-title">😊 rosto</p>
+      <span></span>
+    </div>
+    <p class="home-question">qual roleta?</p>
+    <div class="home-actions" id="submenu-rosto-list"></div>
+  </section>
+
+  <!-- ===================== TELA DE SORTEIO (qualquer roleta) ===================== -->
+  <section class="screen" id="screen-roulette" data-screen hidden>
+
+    <div class="screen-header">
+      <button type="button" class="icon-btn" data-back aria-label="Voltar">←</button>
+      <p class="screen-title" id="roulette-title">roleta</p>
+      <span class="mood-pill" id="roulette-mood-pill">aleatório</span>
+    </div>
+
+    <div class="filter-panel" id="filter-panel">
+      <div class="filter-group" id="marca-filter-group" hidden>
+        <p class="filter-label">marca</p>
+        <div class="filter-chips filter-chips--brand" id="marca-chips"></div>
+      </div>
+      <div class="filter-footer">
+        <span class="filter-count" id="filter-count">0 produtos disponíveis</span>
+        <button type="button" class="filter-clear" id="filter-clear" hidden>↺ limpar filtros</button>
+      </div>
+      <p class="filter-empty" id="filter-empty" hidden>💕 Não encontrei nenhum produto nessa combinação. Tente outro filtro.</p>
+
+      <div class="usage-bar">
+        <span class="usage-text" id="usage-text">0 de 0 sorteados</span>
+        <button type="button" class="usage-reset" id="usage-reset" hidden>↺ resetar roleta</button>
+      </div>
+    </div>
+
+    <div class="stage">
+
+      <div class="wheel-wrap" id="wheel-wrap">
+        <span class="pointer" aria-hidden="true"></span>
+        <div class="wheel" id="wheel">
+          <div class="wheel-slices" id="wheel-slices"></div>
+          <div class="wheel-hub" id="wheel-hub">
+            <img id="wheel-hub-img" src="" alt="" onerror="this.style.display='none'">
+            <span id="wheel-hub-icon">💄</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reel-wrap" id="reel-wrap" hidden>
+        <div class="reel-window">
+          <div class="reel-fade reel-fade--top" aria-hidden="true"></div>
+          <div class="reel-highlight" aria-hidden="true"></div>
+          <div class="reel-track" id="reel-track"></div>
+          <div class="reel-fade reel-fade--bottom" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="result" id="result" hidden>
+        <span class="result-badge" id="result-badge" aria-hidden="true">
+          <img id="result-badge-img" src="" alt="" onerror="this.style.display='none'">
+          <span class="icon-fallback" id="result-badge-fallback">💄</span>
+        </span>
+        <p class="result-kicker" id="result-kicker">hoje você vai usar</p>
+        <h2 class="result-name" id="result-name">—</h2>
+
+        <div class="result-detail" id="result-detail-lines"></div>
+
+        <p class="result-message" id="result-message"></p>
+      </div>
+
+      <div class="egg" id="egg" hidden>
+        <p class="egg-emoji" aria-hidden="true">✦ ✿ ✦</p>
+        <p class="egg-title">um extra especial pra você</p>
+        <p class="egg-text" id="egg-text"></p>
+      </div>
+    </div>
+
+    <div class="stage-actions">
+      <button type="button" class="btn btn-primary" id="spin-btn">girar</button>
+      <button type="button" class="btn btn-ghost" id="spin-again-btn" hidden>girar novamente</button>
+    </div>
+
+  </section>
+
+  <!-- ===================== TELA COMBO ===================== -->
+  <section class="screen" id="screen-combo" data-screen hidden>
+
+    <div class="screen-header">
+      <button type="button" class="icon-btn" data-back aria-label="Voltar">←</button>
+      <p class="screen-title">combo do dia</p>
+      <span class="mood-pill" id="combo-mood-pill">aleatório</span>
+    </div>
+
+    <div class="stage stage--combo">
+
+      <div class="combo-wheels" id="combo-wheels"></div>
+
+      <div class="combo-result" id="combo-result" hidden></div>
+
+      <div class="egg" id="combo-egg" hidden>
+        <p class="egg-emoji" aria-hidden="true">✦ ✿ ✦</p>
+        <p class="egg-title">um extra especial pra você</p>
+        <p class="egg-text" id="combo-egg-text"></p>
+      </div>
+    </div>
+
+    <div class="stage-actions">
+      <button type="button" class="btn btn-primary" id="combo-spin-btn">girar</button>
+      <button type="button" class="btn btn-ghost" id="combo-spin-again-btn" hidden>girar novamente</button>
+    </div>
+
+  </section>
+
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
