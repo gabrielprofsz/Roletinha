@@ -1,9 +1,12 @@
 /* =========================================================
    CATÁLOGO COMPLETO — Documento Mestre + Atualização Oficial
    de Roletas e Categorização.
-   9 roletas especializadas, 313 produtos ao todo.
+   9 roletas especializadas, 319 produtos ao todo.
    Olhos, Body Splash e Blush foram corrigidos conforme o
    documento de atualização; as demais roletas continuam iguais.
+   Últimos adicionados: Sephora (Iris Shimmer, Stone, Fresh Mint) e
+   MAC (Strawberry Milk) em Olhos; Gucci (Flora Intense) em Body
+   Splash; LOTR (Fangorn) em Boca.
    marca: "" = não foi possível identificar a marca pelo nome.
    cor/funcao/combina ficam propositalmente em branco.
    ========================================================= */
@@ -103,6 +106,7 @@ const CATALOGO = [
   { id: "boca_080", nome: "Guava stick Amora", marca: "Guava", tipo: "labios", categoriaRoleta: "boca", cor: "", funcao: "", combina: "", climas: [], ativo: true },
   { id: "boca_081", nome: "Dudah Rosewood", marca: "Dudah", tipo: "labios", categoriaRoleta: "boca", cor: "", funcao: "", combina: "", climas: [], ativo: true },
   { id: "boca_082", nome: "Dudah Coffee", marca: "Dudah", tipo: "labios", categoriaRoleta: "boca", cor: "", funcao: "", combina: "", climas: [], ativo: true },
+  { id: "boca_083", nome: "LOTR Fangorn", marca: "LOTR", tipo: "labios", categoriaRoleta: "boca", cor: "", funcao: "", combina: "", climas: [], ativo: true },
   { id: "splash_001", nome: "Boticario Pessegura", marca: "Boticario", tipo: "outros", categoriaRoleta: "splash", cor: "", funcao: "", combina: "", climas: [], ativo: true },
   { id: "splash_002", nome: "Boticario morango e leite", marca: "Boticario", tipo: "outros", categoriaRoleta: "splash", cor: "", funcao: "", combina: "", climas: [], ativo: true },
   { id: "splash_003", nome: "Boticario Deleite", marca: "Boticario", tipo: "outros", categoriaRoleta: "splash", cor: "", funcao: "", combina: "", climas: [], ativo: true },
@@ -128,6 +132,7 @@ const CATALOGO = [
   { id: "splash_023", nome: "YB Mermaid Kiss", marca: "YB", tipo: "outros", categoriaRoleta: "splash", cor: "", funcao: "", combina: "", climas: [], ativo: true },
   { id: "splash_024", nome: "YB Milk dream", marca: "YB", tipo: "outros", categoriaRoleta: "splash", cor: "", funcao: "", combina: "", climas: [], ativo: true },
   { id: "splash_025", nome: "YB Caramel glow", marca: "YB", tipo: "outros", categoriaRoleta: "splash", cor: "", funcao: "", combina: "", climas: [], ativo: true },
+  { id: "splash_026", nome: "Gucci Flora Intense", marca: "Gucci", tipo: "outros", categoriaRoleta: "splash", cor: "", funcao: "", combina: "", climas: [], ativo: true },
   { id: "olhos_001", nome: "Oceane Flame", marca: "Oceane", tipo: "olhos", categoriaRoleta: "olhos", cor: "", funcao: "", combina: "", climas: [], ativo: true },
   { id: "olhos_002", nome: "Oceane Romance", marca: "Oceane", tipo: "olhos", categoriaRoleta: "olhos", cor: "", funcao: "", combina: "", climas: [], ativo: true },
   { id: "olhos_003", nome: "Oceane Dreamer", marca: "Oceane", tipo: "olhos", categoriaRoleta: "olhos", cor: "", funcao: "", combina: "", climas: [], ativo: true },
@@ -213,6 +218,10 @@ const CATALOGO = [
   { id: "olhos_083", nome: "Guava baunilha", marca: "Guava", tipo: "olhos", categoriaRoleta: "olhos", cor: "", funcao: "", combina: "", climas: [], ativo: true },
   { id: "olhos_084", nome: "Ruby k Rose glam", marca: "Ruby K", tipo: "olhos", categoriaRoleta: "olhos", cor: "", funcao: "", combina: "", climas: [], ativo: true },
   { id: "olhos_085", nome: "Essence verde", marca: "Essence", tipo: "olhos", categoriaRoleta: "olhos", cor: "", funcao: "", combina: "", climas: [], ativo: true },
+  { id: "olhos_086", nome: "Sephora Iris Shimmer", marca: "Sephora", tipo: "olhos", categoriaRoleta: "olhos", cor: "", funcao: "", combina: "", climas: [], ativo: true },
+  { id: "olhos_087", nome: "Sephora Stone", marca: "Sephora", tipo: "olhos", categoriaRoleta: "olhos", cor: "", funcao: "", combina: "", climas: [], ativo: true },
+  { id: "olhos_088", nome: "Sephora Fresh Mint", marca: "Sephora", tipo: "olhos", categoriaRoleta: "olhos", cor: "", funcao: "", combina: "", climas: [], ativo: true },
+  { id: "olhos_089", nome: "MAC Strawberry Milk", marca: "MAC", tipo: "olhos", categoriaRoleta: "olhos", cor: "", funcao: "", combina: "", climas: [], ativo: true },
   { id: "esmalte_001", nome: "Me encontra no letreiro", marca: "", tipo: "outros", categoriaRoleta: "esmalte", cor: "", funcao: "", combina: "", climas: [], ativo: true },
   { id: "esmalte_002", nome: "Rainha da selva de pedra", marca: "", tipo: "outros", categoriaRoleta: "esmalte", cor: "", funcao: "", combina: "", climas: [], ativo: true },
   { id: "esmalte_003", nome: "Ouro nude", marca: "", tipo: "outros", categoriaRoleta: "esmalte", cor: "", funcao: "", combina: "", climas: [], ativo: true },
