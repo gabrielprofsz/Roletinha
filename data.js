@@ -1,12 +1,14 @@
 /* =========================================================
    CATÁLOGO COMPLETO — Documento Mestre + Atualização Oficial
    de Roletas e Categorização.
-   9 roletas especializadas, 319 produtos ao todo.
+   9 roletas especializadas, 325 produtos ao todo.
    Olhos, Body Splash e Blush foram corrigidos conforme o
    documento de atualização; as demais roletas continuam iguais.
    Últimos adicionados: Sephora (Iris Shimmer, Stone, Fresh Mint) e
    MAC (Strawberry Milk) em Olhos; Gucci (Flora Intense) em Body
-   Splash; LOTR (Fangorn) em Boca.
+   Splash; LOTR (Fangorn) em Boca; 7 esmaltes novos (Sakura, The
+   goblin battle, Doomed to rule, Firey, Little tree, As the world
+   falls down, I am inevitable) no lugar do "Deep vintage", removido.
    marca: "" = não foi possível identificar a marca pelo nome.
    cor/funcao/combina ficam propositalmente em branco.
    ========================================================= */
@@ -268,7 +270,13 @@ const CATALOGO = [
   { id: "esmalte_044", nome: "Heartbeat", marca: "", tipo: "outros", categoriaRoleta: "esmalte", cor: "", funcao: "", combina: "", climas: [], ativo: true },
   { id: "esmalte_045", nome: "Patched up beauty", marca: "", tipo: "outros", categoriaRoleta: "esmalte", cor: "", funcao: "", combina: "", climas: [], ativo: true },
   { id: "esmalte_046", nome: "Forged in caos", marca: "", tipo: "outros", categoriaRoleta: "esmalte", cor: "", funcao: "", combina: "", climas: [], ativo: true },
-  { id: "esmalte_047", nome: "Deep vintage", marca: "", tipo: "outros", categoriaRoleta: "esmalte", cor: "", funcao: "", combina: "", climas: [], ativo: true },
+  { id: "esmalte_047", nome: "Sakura", marca: "", tipo: "outros", categoriaRoleta: "esmalte", cor: "", funcao: "", combina: "", climas: [], ativo: true },
+  { id: "esmalte_048", nome: "The goblin battle", marca: "", tipo: "outros", categoriaRoleta: "esmalte", cor: "", funcao: "", combina: "", climas: [], ativo: true },
+  { id: "esmalte_049", nome: "Doomed to rule", marca: "", tipo: "outros", categoriaRoleta: "esmalte", cor: "", funcao: "", combina: "", climas: [], ativo: true },
+  { id: "esmalte_050", nome: "Firey", marca: "", tipo: "outros", categoriaRoleta: "esmalte", cor: "", funcao: "", combina: "", climas: [], ativo: true },
+  { id: "esmalte_051", nome: "Little tree", marca: "", tipo: "outros", categoriaRoleta: "esmalte", cor: "", funcao: "", combina: "", climas: [], ativo: true },
+  { id: "esmalte_052", nome: "As the world falls down", marca: "", tipo: "outros", categoriaRoleta: "esmalte", cor: "", funcao: "", combina: "", climas: [], ativo: true },
+  { id: "esmalte_053", nome: "I am inevitable", marca: "", tipo: "outros", categoriaRoleta: "esmalte", cor: "", funcao: "", combina: "", climas: [], ativo: true },
   { id: "esmalte_efeito_001", nome: "Lembranças", marca: "", tipo: "outros", categoriaRoleta: "esmalte_efeito", cor: "", funcao: "", combina: "", climas: [], ativo: true },
   { id: "esmalte_efeito_002", nome: "Chega e arrasa", marca: "", tipo: "outros", categoriaRoleta: "esmalte_efeito", cor: "", funcao: "", combina: "", climas: [], ativo: true },
   { id: "esmalte_efeito_003", nome: "Diamante azul", marca: "", tipo: "outros", categoriaRoleta: "esmalte_efeito", cor: "", funcao: "", combina: "", climas: [], ativo: true },
